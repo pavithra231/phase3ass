@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List OF User Details</title>
+</head>
+<body>
+<div align="center">
+<H1>List of reports</H1>
+<br/>
+ <table border="1" cellpadding="10">
+   <thead>
+     <tr>
+        <th>UserName</th>
+        <th>Phone</th>
+        <th>Product Purchased</th>
+        <th>Purchase Date</th>
+        <th>Category</th>
+      </tr>
+     </thead>
+     <tbody>
+       <tr th:each="report : ${listreport}">
+          <td th:text="${report.username}">UserName</td>
+          <td th:text="${report.phone}">Phone</td>
+          <td th:text="${report.productPerchased}">Product Purchased</td>
+          <td th:text="${report.perchaseDate}">Purchase Date</td>
+          <td th:text="${report.category}">Category</td>
+        </tr>
+     </tbody>
+     </table>
+     <a href="/logout">LogOut</a>
+   </div>
+</body>
+</html>
